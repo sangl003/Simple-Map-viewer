@@ -1,0 +1,20 @@
+{
+  "version": "10.2.7",
+  "suppress": [],
+  "include": {
+    "ArcGIS Runtime": true,
+    "Specialized Symbology": {
+      "Military (MIL2525C)": true,
+      "Military (App6B)": true
+    },
+    "Local Server": {
+      "Geoprocessing": {
+        "Map Server Results": true
+      },
+      "Additional Data Formats": {
+        "Vector": true,
+        "Raster": true
+      }
+    }
+  }
+}
