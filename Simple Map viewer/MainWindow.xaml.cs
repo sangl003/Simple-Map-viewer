@@ -38,38 +38,7 @@ namespace Simple_Map_viewer
                 MessageBox.Show(ex.Message, "Unable to share location");
             }
         }
-        private async void resetDisplay_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                // If the LocationDisplay is enabled and a Location currently exists, reset the map
-                // to zero rotation and center on the Location. Otherwise, set the MapView to center on 0,0.
-                if (MyMapView.LocationDisplay != null &&
-                    MyMapView.LocationDisplay.IsEnabled &&
-                    MyMapView.LocationDisplay.CurrentLocation != null &&
-                    MyMapView.LocationDisplay.CurrentLocation.Location.Extent != null)
-                {
-                    // Get the current AutoPanMode setting as it is automatically disabled when calling MyMapView.SetView().
-                    var PanMode = MyMapView.LocationDisplay.AutoPanMode;
-
-                    MyMapView.SetRotation(0);
-                    await MyMapView.SetViewAsync(MyMapView.LocationDisplay.CurrentLocation.Location);
-
-                    // Reset the AutoPanMode 
-                    MyMapView.LocationDisplay.AutoPanMode = PanMode;
-                }
-                else
-                {
-                    var viewpoint = new Viewpoint(MyMapView.Map.Layers[0].FullExtent) { Rotation = 0.0 };
-                    await MyMapView.SetViewAsync(viewpoint);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Sample Error");
-            }
-        }
-
+        
         // Identify features at the click point
         private async void MyMapView_MapViewTapped(object sender, MapViewInputEventArgs e)
         {
@@ -178,40 +147,6 @@ namespace Simple_Map_viewer
             }
         }
 
-
-        /* <Border Background="White" BorderBrush="Black" BorderThickness="1"
-                        HorizontalAlignment="Right" VerticalAlignment="Top"
-                        Margin="0,502,10.2,0" Padding="20" Height="67" Width="486">
-                    <Border.Effect>
-                        <DropShadowEffect/>
-                    </Border.Effect>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
-                        <RadioButton Tag="http://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer" 
-                                     IsChecked="true" Margin="5,0,0,0" 
-                                     GroupName="Layers" Content="Streets" Click="RadioButton_Click"/>
-                        <RadioButton Tag="http://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer" Margin="5,0,0,0"  
-                                     GroupName="Layers" Content="Topographic" Click="RadioButton_Click"/>
-                        <RadioButton Tag="http://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer" Margin="5,0,0,0"  
-                                     GroupName="Layers" Content="Imagery" Click="RadioButton_Click"/>
-                        <RadioButton Tag="http://services.arcgisonline.com/arcgis/rest/services/Ocean/World_Ocean_Base/MapServer" Margin="5,0,0,0"  
-                                     GroupName="Layers" Content="Oceans" Click="RadioButton_Click"/>
-                        <RadioButton Tag="http://services.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer" Margin="5,0,0,0"  
-                                     GroupName="Layers" Content="National Geographic" Click="RadioButton_Click" Width="130"/>
-                    </StackPanel>
-                </Border>
-      
-         * 
-         * 
-         * private void RadioButton_Click(object sender, RoutedEventArgs e)
-                {
-                    MyMapView.Map.Layers.RemoveAt(0);
-
-                    MyMapView.Map.Layers.Add(new ArcGISTiledMapServiceLayer()
-                    {
-                        ServiceUri = ((RadioButton)sender).Tag as string
-                    });
-                }
-          */
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             if (this.TextBox1.Text != "")

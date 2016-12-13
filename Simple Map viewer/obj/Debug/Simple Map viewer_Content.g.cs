@@ -2743,7 +2743,7 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("positionreport.json")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("spotreport.json")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("mil2525c.dat")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("tmpb4.tmp")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("tmpb4.tmp")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("tmp743b.tmp")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("tmp743b.tmp")]
 
 
