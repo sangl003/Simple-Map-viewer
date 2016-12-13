@@ -1,72 +1,114 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Simple-map-viewer : Simple Map viewer">
+    <title>Simple-map-viewer by sangl003</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Simple-map-viewer</title>
   </head>
-
   <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/sangl003/Simple-Map-viewer">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/sangl003/Simple-Map-viewer/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/sangl003/Simple-Map-viewer/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/sangl003/Simple-Map-viewer">View on GitHub</a>
+    <div class="wrapper">
 
-          <h1 id="project_title">Simple-map-viewer</h1>
-          <h2 id="project_tagline">Simple Map viewer</h2>
+      <section>
+        <div id="title">
+          <h1>Simple-map-viewer</h1>
+          <p>Simple Map viewer</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/sangl003">sangl003</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/sangl003/Simple-Map-viewer/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/sangl003/Simple-Map-viewer/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
         <h3>
 <a id="simple-map-viewer" class="anchor" href="#simple-map-viewer" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Simple Map viewer</h3>
 
-<p>Simple map viewer is developed using ArcGIS Runtime for.Net using Desktop API Version 10.2.7. The application allows you to add, remove view web services. It also allows you to use the identify the features in the map. </p>
+<p>Simple Desktop Map viewer is developed using ArcGIS Runtime for .Net 10.2.7. It allows you to add, remove, view, navigate through Web Services. The user can add new web services or use the existing one. It also allows identifying features. This project can be used in companies where they don’t want to invest license copies for ArcMap but still want some of their employees to have the ability to view the internal services in a very basic viewer.  They can customize and allow different tools specific to the companies need. </p>
 
 <h3>
-<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Designer Templates</h3>
+<a id="learning-and-understanding-the-concepts" class="anchor" href="#learning-and-understanding-the-concepts" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Learning and understanding the concepts:</h3>
 
-<p>We’ve crafted some handsome templates for you to use. Go ahead and click 'Continue to layouts' to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved.</p>
+<p>I choose to develop in ArcGIS Runtime for .NET as I wanted to revisit the concepts and refresh the C# programming. Initially, I spend time on going through the basic concepts of C# and object oriented programming like class, destructors, constructor, methods, inheritance etc.  I used the MSDN for reference <a href="https://msdn.microsoft.com/en-us/library/mt656686.aspx">https://msdn.microsoft.com/en-us/library/mt656686.aspx</a> After going through the basic concepts I went through learning about ArcGIS Runtime for .NET. The system requirements for developing a Desktop application need the Visual Studio IDE and installation of ArcGIS Runtime.<br>
+I installed Microsoft Visual Studio Professional 2012 Version 11.0.61219.00 Update 5 Microsoft .NET Framework Version 4.6.01586 and ArcGIS Runtime for .Net 10.2.7 This is little tricky as you have to first go through the installation of visual studio and then the Runtime. This allows it to add the assemblies and templates for ArcGIS Runtime in the visual studio. If you do not follow the sequence you would end uninstalling and reinstalling the setups.  This is the simple part in the installation process. The next step is to setup the NuGet Packages which allows you to get additional controls and utilities. I didn’t install this package however eventually I had to install it as some of the ArcGIS Runtime assemblies were missing.</p>
 
 <h3>
-<a id="creating-pages-manually" class="anchor" href="#creating-pages-manually" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Creating pages manually</h3>
+<a id="visual-studio-professional-2012-ide" class="anchor" href="#visual-studio-professional-2012-ide" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Visual Studio Professional 2012 IDE:</h3>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<p>After the install, it is simple to create a project either using a WPF template or using an ArcGIS Runtime template in the projects menu</p>
+
+<p><img src="https://github.com/sangl003/Simple-Map-viewer/blob/master/Images/vbide.png?raw=true" alt="Visual studio IDE"></p>
+
+<p>I had some familiarity with the Visual Studio IDE and the different panels like Solutions explorer, Tools, Properties etc. The IDE is really useful as you can drag and drop and design the front view of your app in the design view. This saves a lot of time to figure out the programming each and every property.  You still have the ability to code in the “.xaml” file. This file contains the Extensible Application Markup language.  The backend or the logic for the buttons or text box list box etc. can be coded in the “.cs” file. This file contains the classes and different methods in the application.  The Solution explorer allows to view the files in a hierarchical order and you can use this to go back and forth from different files. </p>
+
+<h3>
+<a id="licensing-the-application" class="anchor" href="#licensing-the-application" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Licensing the application:</h3>
+
+<p>The next step is to license your application using the developer's account and registering the application. You can simply register a new application and once the code is generated you can use this code to register in “.cs” file. There are 3 different licensing levels Developers, Basic and Standard. I registered for the free 50 credit/month Development and testing which allows you remove the watermarks from the application and to deploy the app.  The online developer's account looks something like below image:</p>
+
+<p><img src="https://github.com/sangl003/Simple-Map-viewer/blob/master/Images/licencekey.png?raw=true" alt="Licensing the application"></p>
+
+<p>After setting the environment and licensing your app, there is nothing much to do regarding the setup. The next step is to start designing and implementing the application logic.</p>
+
+<h3>
+<a id="designing-the-app" class="anchor" href="#designing-the-app" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Designing the app:</h3>
+
+<ol>
+<li>   Initially, I had a thought of having a lot many features than the app has right now like layer list, legend, and print. However, I started to take one step at a time and started with the first sample build your first web map. This helped me understand how the Map viewer objects work. The next step was to learn about dynamic map services and to add services dynamically to the app in runtime. Initially, I used a drop down list and passed the list of Map services. This allowed me to add the services from the list one at a time. </li>
+<li>   The second part was to implement identify tool, this part took a while longer than expected. Initially, I used a list of services and hard coded the pop-ups and used the x,y coordinates to access the features properties. This worked well, however when I allowed the user to add new services to the feature this logic didn’t work. Now I had to find a way to keep the ‘identity tool’ generalized and access all the attributes of the feature using the identity operations of a service.</li>
+</ol>
+
+<p>Below image shows the app at this point of time:</p>
+
+<p><img src="https://github.com/sangl003/Simple-Map-viewer/blob/master/Images/identify.png?raw=true" alt="Application in Making"></p>
+
+<p>By referring the Identify tool sample in the developer’s documentation I was able to access the identify operations and query on click for all the layers in the map. This allowed returning multiple features.
+3.    Allowing user to add web services in a text box. I was pretty clear about adding the new web services to the list box and not to the Map as it would keep the service in the instance of running application and user can still add the different layer. The second scenario was to pass the input from the textbox directly to the object of Esri.ArcGISRuntime.Layers.ArcGISDynamicMapServiceLayer
+Finally, I was able to add the services to the list and add them to the map.  However, this made the map refresh every time and did not allow services to overlap each other. After tweaking the code, I was able to add the overlay layers. But as the layer is added from a list and not a check box there was no ability to remove a layer. Now I added a button to clear the layer at position 0 so that it will remove the very first layer every time you click it.</p>
+
+<ol>
+<li>   Adding location services was pretty simple as it uses the system location and displays it on the map. The sample code also allowed reset the map, panning, etc. but I just used the location service as all other things were not required for this simple app.</li>
+<li>   After having the foundation of the application now I was working on the cosmetic changes in the app. Initially, all the components were on different border tags as I was not able to find the tag in XAML which allowed adding the components on one stack and still keep it mobile responsive. Later I realized I could use Grid tag to do so. The final look of the app is given below:</li>
+</ol>
+
+<p><img src="https://github.com/sangl003/Simple-Map-viewer/blob/master/Images/Finalproject.png?raw=true" alt="Simple Desktop Viewer"></p>
+
+<h3>
+<a id="conclusion" class="anchor" href="#conclusion" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Conclusion:</h3>
+
+<p>This application does not have a lot of features but I have learned a lot about the structure of XAML and ArcGIS runtime and .Net during the development of this project. I would do some things differently if given a chance. I would use radio buttons or check boxes for selecting the layers. I would add more functionality for adding new data to the app like shape files or zip folders.<br>
+My aim was to gain confidence in .NET, XAML, and ArcGIS Runtime so that I could use this skillset in my professional life. I believe I have gained that knowledge to keep challenging myself and learn more about these languages. It was a great learning experience and I liked the openness of the project and the freedom to focus on what you learn than the immenseness of project.</p>
 
 <h3>
 <a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authors and Contributors</h3>
 
-<p>You can @mention a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor’s GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<p>Please contact Sharvari Sangle (<a href="https://github.com/sangl003" class="user-mention">@sangl003</a>) on Github for any questions.</p>
 
 <h3>
 <a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Support or Contact</h3>
 
 <p>Having trouble with Pages? Check out our <a href="https://help.github.com/pages">documentation</a> or <a href="https://github.com/contact">contact support</a> and we’ll help you sort it out.</p>
       </section>
-    </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Simple-map-viewer maintained by <a href="https://github.com/sangl003">sangl003</a></p>
-        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
-      </footer>
     </div>
-
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
     
-
   </body>
 </html>
